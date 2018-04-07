@@ -5,7 +5,7 @@
         <form>
           <div class="form-group">
             <label for="userWallet">Wallet address</label>
-            <input type="text" class="form-control" id="userWallet">
+            <input type="text" class="form-control" id="userWallet" placeholder="Enter wallet address..">
           </div>
           <div class="form-group">
             <label for="userPassword">Password</label>

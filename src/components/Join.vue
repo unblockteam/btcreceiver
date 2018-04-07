@@ -5,7 +5,8 @@
         <form>
           <div class="form-group">
             <label for="userPassword">Password</label>
-            <input type="password" class="form-control" id="userPassword">
+            <input type="password" class="form-control" id="userPassword" aria-describedby="userPasswordHelp">
+            <small id="userPasswordHelp" class="form-text text-muted">Your BTC wallet will be generated after registration.</small>
           </div>
           <div class="form-group">
             <label for="userPasswordConfirm">Password confirmation</label>
