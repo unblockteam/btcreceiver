@@ -1,7 +1,7 @@
 {
-  "name": "hack-fe",
+  "name": "btcreceiver",
   "version": "1.0.0",
-  "description": "Hackaton task frontend. A Vue.js project",
+  "description": "BTCReceiver application. A Vue.js project",
   "author": "Vladimir Sushkov <volodya.sushkov@gmail.com>",
   "private": true,
   "scripts": {

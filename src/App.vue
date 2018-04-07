@@ -4,7 +4,7 @@
       <nav class="navbar navbar-expand-md navbar-light bg-light">
         <router-link class="navbar-brand" :to="{ name: 'index' }">
           <img src="static/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-            Hack
+            BTCReceiver
         </router-link>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>

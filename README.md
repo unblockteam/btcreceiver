@@ -1,4 +1,7 @@
-# Hack frontend
+# BTCReceiver app 
+[![Build Status](https://travis-ci.org/unblockteam/btcreceiver.svg?branch=master)](https://travis-ci.org/unblockteam/btcreceiver)
+
+Simple Bitcoin payments receiver.
 
 > A Vue.js project
 
