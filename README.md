@@ -1,4 +1,5 @@
 # Hack frontend
+[![pipeline status](https://gitlab.com/sushkov/hack-fe/badges/master/pipeline.svg)](https://gitlab.com/sushkov/hack-fe/commits/master)
 > A Vue.js project
 
 ## Build Setup

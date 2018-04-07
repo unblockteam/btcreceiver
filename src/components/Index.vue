@@ -3,10 +3,10 @@
     <div class="row justify-content-center">
       <div>
         <router-link :to="{ name: 'login' }">
-          <button type="button" class="btn btn-success">Sign-in</button>
+          <button type="button" class="btn btn-primary">Sign-in</button>
         </router-link>
         <router-link :to="{ name: 'join' }">
-          <button type="button" class="btn btn-info">Sign-up</button>
+          <button type="button" class="btn btn-success">Sign-up</button>
         </router-link>
       </div>
     </div>
