@@ -1,5 +1,6 @@
 <template>
-  <div class="container">
+  <home v-if="isLoggedIn"/>
+  <div class="container" v-else>
     <div class="row justify-content-center">
       <div>
         <router-link :to="{ name: 'login' }">
@@ -13,10 +14,23 @@
   </div>
 </template>
 
+
 <script>
-export default {
-  name: 'index'
-}
+  import { mapGetters } from 'vuex'
+
+  import Home from './Home'
+
+  export default {
+    name: 'index',
+    components: {
+      Home
+    },
+    computed:{
+      ...mapGetters([
+        'isLoggedIn'
+      ])
+    }
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

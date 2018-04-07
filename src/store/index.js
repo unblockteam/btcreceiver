@@ -9,7 +9,11 @@ import mutations from './mutations'
 Vue.use(Vuex);
 
 const persistedStateOptions = {
-  storage: window.localStorage
+  storage: window.localStorage,
+  paths: ['user.token'],
+  filter: mutation => (
+    'updateUser' === mutation.type
+  )
 };
 
 const store = new Vuex.Store({
