@@ -10,7 +10,7 @@ Vue.use(Vuex);
 
 const persistedStateOptions = {
   storage: window.localStorage,
-  paths: ['user.token'],
+  paths: ['user'],
   filter: mutation => (
     'updateUser' === mutation.type
   )

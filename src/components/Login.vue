@@ -5,13 +5,13 @@
         <form>
           <div class="form-group">
             <label for="userWallet">Wallet address</label>
-            <input type="text" class="form-control" id="userWallet" placeholder="Enter wallet address..">
+            <input type="text" class="form-control" id="userWallet" placeholder="Enter wallet address.." v-model="userWallet">
           </div>
           <div class="form-group">
             <label for="userPassword">Password</label>
-            <input type="password" class="form-control" id="userPassword">
+            <input type="password" class="form-control" id="userPassword" v-model="userPassword">
           </div>
-          <button type="submit" class="btn btn-primary" @click="login">Sign In</button>
+          <button type="submit" class="btn btn-primary" @click="login" v-bind:disabled="!userWallet || !userPassword">Sign In</button>
           <button type="submit" class="btn btn-secondary" v-if="isLoggedIn" @click="logout">Logout</button>
           <router-link :to="{ name: 'join' }">
             <button type="button" class="btn btn-success">Sign-up</button>
@@ -22,32 +22,59 @@
   </div>
 </template>
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapGetters, mapState } from 'vuex'
+
+  import api from '../api'
 
   export default {
     name: 'login',
+    data: function () {
+      return {
+        userWallet: '',
+        userPassword: ''
+      }
+    },
     computed:{
+      ...mapState([
+        'user'
+      ]),
       ...mapGetters([
         'isLoggedIn'
       ])
     },
     methods: {
-      login (e) {
+      async login (e) {
         e.preventDefault();
 
         console.log('Login');
 
-        this.$store.dispatch('loginUser', {
-          wallet: "Wallet",
-          token: "Token"
+        const signInResp = await api.signIn({
+          wallet: this.userWallet,
+          password: this.userPassword
         });
+
+        this.$store.dispatch('loginUser', {
+          wallet: this.userWallet,
+          token: signInResp.response.access_token
+        });
+
+        console.log('Login success');
+
+        // Redirect to Home
+        this.$router.replace({ name: 'index' });
       },
-      logout (e) {
+      async logout (e) {
         e.preventDefault();
 
         console.log('Logout');
 
+        const logoutResp = await api.logout({
+          access_token: this.user.token
+        });
+
         this.$store.dispatch('logoutUser');
+
+        console.log('Logout Success');
       }
     }
   }
