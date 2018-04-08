@@ -1,9 +1,12 @@
 <template>
   <div class="container">
     <div class="row justify-content-center">
-      <p>Home page</p>
+      <p>Your BTC address:</p>
     </div>
     <div class="row justify-content-center">
+      <p><b>{{ this.user.wallet }}</b></p>
+    </div>
+    <div class="row justify-content-center" style="margin-top: 50px">
       <button type="submit" class="btn btn-secondary" @click="logout">Logout</button>
     </div>
   </div>

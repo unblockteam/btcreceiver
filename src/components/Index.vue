@@ -2,7 +2,7 @@
   <home v-if="isLoggedIn"/>
   <div class="container" v-else>
     <div class="row justify-content-center">
-      <div>
+      <div style="margin-top: 100px">
         <router-link :to="{ name: 'login' }">
           <button type="button" class="btn btn-primary">Sign-in</button>
         </router-link>
