@@ -9,7 +9,7 @@ import NotFound from '@/components/NotFound'
 
 Vue.use(Router);
 
-const basePath = process.env.NODE_ENV === 'production' ? '/btcreceiver/' : '/';
+const basePath = process.env.NODE_ENV === 'production' ? '/' : '/';
 
 const router = new Router({
   base: basePath,

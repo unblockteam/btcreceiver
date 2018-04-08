@@ -25,5 +25,8 @@ export default {
   },
   async logout (data) {
     return await instance.post('/auth.logout', qs.stringify(data));
+  },
+  async getBalance(data) {
+    return await instance.post('/btc.balance', qs.stringify(data));
   }
 }

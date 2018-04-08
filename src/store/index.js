@@ -12,7 +12,7 @@ const persistedStateOptions = {
   storage: window.localStorage,
   paths: ['user'],
   filter: mutation => (
-    'updateUser' === mutation.type
+    'updateUser' === mutation.type || 'updateUser' === mutation.type
   )
 };
 

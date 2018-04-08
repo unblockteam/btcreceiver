@@ -1,6 +1,7 @@
 export default {
   user: {
     token: null,
-    wallet: null
+    wallet: null,
+    balance: null
   }
 }
